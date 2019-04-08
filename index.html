@@ -1,351 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <!-- Bootstrap CSS -->
-    <!-- build:css css/main.css -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap-social.css">
-    <link href="css/styles.css" rel="stylesheet">
-    <!-- endbuild -->
-    <title>Ristorante Con Fusion</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-dark navbar-expand-md fixed-top">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/bootstrap-social/bootstrap-social.css">
+        <title>Online Eye Clinic</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-sm  fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
-            </button>  
-           <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="41"></a>
-           <div class="collapse navbar-collapse" id="Navbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
-                </ul>
-                <span class="navbar-text">
-                    <a id="loginButton">
-                    <span class="fa fa-sign-in"></span> Login</a>
-                </span>   
-            </div>         
-        </div>
-    </nav>
-    <div id="loginModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="content">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                            <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="exampleInputPassword3">Password</label>
-                            <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Remember me
-                            </label>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary btn-sm">Sign in</button>
+                </button>
+                <a class="navbar-brand mr-5 " href="index.html">
+                    <img src="img/logo.png" height="60" width="160">
+                </a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="aboutus.html" > <span class="fa fa-info fa-lg"></span> About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                    </ul>
+                    <span class="navbar-text">
+                        <a id="login">
+                            <span class="fa fa-sign-in"></span>
+                           <a style="color:white"> Login</a> | 
+                        </a>
+                         <a id="signup">
+                            <span class="fa fa-user"></span>
+                           <a style="color: red;"> Signup</a>
+                        </a>
+                    </span>
                 </div>
             </div>
-        </div>
-    </div>
-    <div id="reserveModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="content">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline">
-                        <div class="container">
-                            <div class="form-group row">
-                                <label for="guests" class="col-12 col-sm-12 col-md-2 col-form-label">Number of Guests</label>
-                                <div class="form-check col-12 col-sm-12 col-md-8 justify-content-start">
-                                    <label class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="guest1" name="guests" value="">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">1</span>
+        </nav>
+        <!-- Creating a Model -->
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputEmail3">Email address
                                     </label>
-                                    <label class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="guest2" name="guests" value="">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">2</span>
-                                    </label>
-                                    <label class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="guest3" name="guests" value="">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">3</span>
-                                    </label>
-                                    <label class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="guest4" name="guests" value="">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">4</span>
-                                    </label>
-                                    <label class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="guest5" name="guests" value="">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">5</span>
-                                    </label>
-                                    <label class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="guest6" name="guests" value="">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">6</span>
-                                    </label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="section" class="col-12 col-sm-12 col-md-2 col-form-label justify-content-start">Section</label>
-                                <div class="btn-group col-12 col-sm-12 col-md-8" data-toggle="buttons">
-                                    <label class="btn btn-success active">
-                                        <input type="radio" name="section" id="nonSmoking" autocomplete="off" checked> Non-Smoking
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputPassword3">Password
                                     </label>
-                                    <label class="btn btn-danger">
-                                        <input type="radio" name="section" id="smoking" autocomplete="off"> Smoking
-                                    </label>  
+                                    <input type="pasword" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="date" class="col-12 col-sm-12 col-md-2 col-form-label">Date and Time</label>
-                                <div class="col-12 col-sm-12 col-md-4">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>                                            
-                                        </div>
-                                        <input type="date" class="form-control" id="date" name="date" placeholder="Date">
-                                    </div>                                   
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-clock-o"></i>                                            
-                                        </div>
-                                        <input type="time" class="form-control" id="time" name="time" placeholder="Time">
+                                <div class="col-sm-auto">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input">
+                                        <label class="form-check-label"> Remember me
+                                        </label>
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-danger btn-sm ml-auto" data-dismiss="modal">Cancel
+                                </button>
+                                <button type="submit" class="btn btn-success btn-sm ml-1">Login
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- *****************Signup FORM**************** -->
+                <div id="SignupModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Signup</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                        </button>
+                        <!-- ************************************ -->
+                    </div>
+                    <div class="modal-body">
+                        <form>
                             <div class="form-group row">
-                                <div class="offset-md-2 col-md-10">
-                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary btn-sm">Reserve</button>
+                                <label for="PatientName" class=" col-lg-3 col-md-4 col-sm-12 col-form-label" >
+                                    Name <a style="color:red; font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-6 col-md-8 col-xs-12">
+                         <input type="text" class="form-control form-control-sm mr-1" id="PatientName" placeholder="e.g Deepak Bhatta">
+                                </div>
+                            </div>
+                              <div class="form-group row">
+                                <label for="PatientPassword" class=" col-lg-3 col-md-4 col-sm-12 col-form-label" >
+                                    Password <a style="color:red; font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-6 col-md-8 col-xs-12">
+                         <input type="password" class="form-control form-control-sm mr-1" id="PatientPassword" placeholder="**********">
+                                </div>
+                            </div>
+                              <div class="form-group row">
+                                <label for="PatientRePassword" class=" col-lg-3 col-md-4 col-sm-12 col-form-label" >
+                                    ReType Password <a style="color:red; font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-6 col-md-8 col-xs-12">
+                         <input type="password" class="form-control form-control-sm mr-1" id="PatientRePassword" placeholder="**********">
+                                </div>
+                            </div>
+                             <div class="form-group row">
+                                <label for="PatientMobile" class=" col-lg-3 col-md-4 col-sm-12 col-form-label" >
+                                    Mobile Number <a style="color:red;font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-6 col-md-8 col-xs-12">
+                         <input type="tel" class="form-control form-control-sm mr-1" id="PatientMobile" placeholder="e.g 9877431687">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="PatientEmail" class=" col-lg-3 col-md-4 col-sm-12 col-form-label" >
+                                    Email ID <a style="color:red;font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-6 col-md-8 col-xs-12">
+                         <input type="text" class="form-control form-control-sm mr-1" id="PatientEmail" placeholder="e.g dpkbhatta2051@gmail.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="gender" class=" col-lg-3 col-md-4 col-sm-12 col-form-label" >Gender
+                                </label>
+                                <div class="col-lg-6 col-md-8">
+                                    <div class="form-check form-check-inline">
+                                        <input class=" form-check-input " type="radio" name="gender" id="Male">
+                                        <label class="form-check-label " for="Male">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="Female">
+                                        <label class=" form-check-label " for="Female">Female</label>
+                                    </div>
+                                    </div>
+                                    </div>
+                            <!-- ********************** -->
+                            <div class="form-group row">
+                                <label for="DateTime" class=" col-lg-3 col-md-4 col-sm-12 col-xs-12 col-form-label" >
+                                    Date of Birth <a style="color:red; font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="well"> 
+      <div class="form-group">
+<!--       <label>Date of Birth</label>
+ -->      <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+    </div>
+</div>
+<div class="well"> 
+</div>
+</div>
+</div>
+                            <div class="col-auto">
+                            </div>
+                            <div class="form-group row">
+                                <div class="offset-md-3 col-md-6 offset-lg-3">
+                                    <button type="submit" class="btn btn-success btn-block">
+                                    Signup
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- *************************************************** -->
+        <!-- ************************ -->
+        <header class="jumbotron">
+            <div class="container">
+                <div class="row row-header">
+                    <div class="col-10 col-sm-9">
+                        <h1>New Dristi Chasma Ghar</h1>
+                        <p class="headertext" style="color:yellow">Welcome to New Drist Chasma Ghar.</p>
+                        <p style="color:cyan;">
+                             Whether you're looking for new stylish glasses, need an eye exam, or want to order contact lenses, The New Drist Chasma Ghar in Dhangadhi is the place to go! Family owned and operated, with our experienced, friendly staff and comprehensive eye care services available - <a style="color:white;"> we've got you covered</a>.
+                        </p>
+                    </div>
+<!--                     <div class="col-12 col-sm align-self-center">
+                        <img src="img/logo.png" class="img-fluid">
+                    </div>
+ -->                    <div class="col-10 col-sm align-self-center ">
+                        <a role="button" class="btn btn-block nav-link btn-success" id="reserve"> Take an Appointment
+                        </a>
+                        <!-- ******************************************** -->
+                    </div>
+                </div>
+            </div>
+                         <a style="color:violet; font-size:18px; font-weight:bold;"><marquee>
+                         Find the perfect glasses that complement you at The New Drist Chasma Ghar. We carry a wide selection of high-quality frames. Interested in switching to contact lenses? There are many different types of lenses and we will help find the best one for your needs and active lifestyle.  #Dristi</marquee>
+                    </a>
+        </header>
+        <!-- Creating a Model For Appointment Form-->
+        <div id="RVModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Select what you are looking for or take an appointment</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                        </button>
+                        <!-- ************************************ -->
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group row">
+                                <div class="col-lg-8 col-md-12">
+                                    <div class="form-check form-check-inline">
+                                        <input class=" form-check-input " type="checkbox" name="options" id="chkbox1">
+                                        <label class="form-check-label " for="chkbox1">Opticians</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="options" id="chkbox2">
+                                        <label class=" form-check-label " for="chkbox2">Optician Eye Test</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="options" id="chkbox3">
+                                        <label class="form-check-label " for="chkbox3">Special Appointment</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Check Box -->
+                            <div class="form-group row">
+                                <label for="PatientName" class=" col-lg-3 col-md-3 col-sm-12 col-form-label" >
+                                    Your Name <a style="color:red; font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-6 col-md-8 col-xs-12">
+                         <input type="text" class="form-control form-control-sm mr-1" id="PatientName" placeholder="e.g Deepak Bhatta">
+                                </div>
+                            </div>
+                             <div class="form-group row">
+                                <label for="PatientMobile" class=" col-lg-3 col-md-3 col-sm-12 col-form-label" >
+                                    Your Mobile Number <a style="color:red;font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-6 col-md-8 col-xs-12">
+                         <input type="tel" class="form-control form-control-sm mr-1" id="PatientMobile" placeholder="e.g 9877431687">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="PatientEmail" class=" col-lg-3 col-md-3 col-sm-12 col-form-label" >
+                                    Your Email ID (Optional)
+                                </label>
+                                <div class="col-lg-6 col-md-8 col-xs-12">
+                         <input type="text" class="form-control form-control-sm mr-1" id="PatientEmail" placeholder="e.g dpkbhatta2051@gmail.com">
+                                </div>
+                            </div>
+                            <!-- ********************** -->
+                            <div class="form-group row">
+                                <label for="DateTime" class=" col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label" >
+                                    Date and Time <a style="color:red; font-size:20px;">*</a>
+                                </label>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2">
+                                    <input type="tel"  class="form-control" id="date" name="date" placeholder="Date">
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2">
+                                    <input type="tel"  class="form-control" id="time" name="time" placeholder="Time">
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                            </div>
+                            <div class="form-group row">
+                                <div class="offset-md-3 col-md-6 offset-lg-3">
+                                    <button type="submit" class="btn btn-success btn-block">
+                                    Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- *************************************** -->
+        <div class="container">
+            <!--  Carouel -->
+            <div class="row row-content">
+                <div class="col">
+                    <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="litbox">
+                            <div class="carousel-item active">
+                                <img src="img/img1.jpg" alt="uthappizza" class="d-block col-sm-12 col-lg-4 img-fluid">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>Computerized Eye Testing <span class="badge badge-danger">Free Checkup</span> <span class="badge badge-pill badge-secondary">Rs. 0.00</span></h2>
+                                    <p class="d-none d-sm-block slidetext">A visual field test is an examination that may be performed to analyze a patient's visual field. The exam may be performed by a technician in one of several ways. ... Machine based tests aid diagnostics by allowing a detailed printout of the patient's visual field.</p>
+                                </div>
+                            </div>
+ <div class="carousel-item">
+                                <img src="img/img2.jpg" alt="buffet" class="d-block col-sm-12 col-lg-4 img-fluid">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>All kind of Medicines</h2>
+                                    <p class="d-none d-sm-block slidetext">Eye drops have less of a risk of side effects than do oral medicines, and such risk can be minimized by occluding the lacrimal punctum, (i.e. pressing on the inner corner of the eye) for a short while after instilling drops. Eye drops are also used for stopping itching and redness of the eyes.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/img4.jpg"alt="buffet" class="d-block col-sm-12 col-lg-4 img-fluid">
+                                <div class="carousel-caption d-none d-md-block ">
+                                    <h2>Buy Latest Sunglass <span class="badge badge-danger">NEW</span></h2>
+                                    <p class="d-none d-sm-block slidetext">Available in different shapes, sizes, colours and frames, the price range of sunglasses at Dristi Chasma Ghar is from Rs. 250 to Rs. 5,000. Dristi assures you the best sunglasses online shopping experience. </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/img3.jpeg" alt="alberto" class="d-block col-sm-12 col-lg-4 img-fluid">
+                                <div class="carousel-caption d-none d-md-block ">
+                                    <h2>Reliable And Accurate Power</h2>
+                                    <h4>Dr. Deepak Bhatta</h4>
+                                    <p class="d-none d-sm-block slidetext" style="text-align:justify">An ophthalmologist is a medical doctor (MD) or a doctor of osteopathic medicine (DO) who specializes in eye and vision care. Ophthalmologists are trained to perform eye exams, diagnose and treat disease, prescribe medications and perform eye surgery. They also write prescriptions for eyeglasses and contact lenses.</p>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                        <!-- Carousel Controls -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#mycarousel" dta-slide-to="0" class="active"></li>
+                            <li data-target="#mycarousel" data-slide-to="1"></li>
+                            <li data-target="#mycarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Manually Scroll -->
+                        <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                        <!-- ***********WEEK 4********* -->
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span class="fa fa-pause">
+                        </span>
+                        </button>
+                        <!-- ********************** -->
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content align-items-center ">
+                <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                    <h3>Well Equipment for Eye Testing</h3>
+                </div>
+                <div class="col col-sm order-sm-first col-md">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail align-self-center " src="img/img1.jpg" alt="uthappizza">
+                        <div class="media-body">
+                            <h2 class="mt-0">Computerized Eye Testing <span class="badge badge-danger">Free Checkup</span> <span class="badge badge-pill badge-secondary">Rs. 0.00</span></h2>
+                            <p class="d-none d-sm-block" style="text-align:justify">A visual field test is an examination that may be performed to analyze a patient's visual field. The exam may be performed by a technician in one of several ways. Machine based tests aid diagnostics by allowing a detailed printout of the patient's visual field.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content align-items-center">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <h3>Eye Drops</h3>
+                </div>
+                <div class="col col-sm col-md ">
+                    <div class="media">
+                        <div class="media-body">
+                            <h2 class="mt-0 media-heading">All kinds of drops are available<span class="badge badge-danger">NEW</span></h2>
+                            <p class="d-none d-sm-block" style="text-align:justify">Eye drops are saline-containing drops used as an ocular route to administer. Depending on the condition being treated, they may contain steroids, antihistamines, sympathomimetics, beta receptor blockers, parasympathomimetics, parasympatholytics, prostaglandins, nonsteroidal anti-inflammatory drugs (NSAIDs), antibiotics, antifungal, or topical anesthetics. Eye drops sometimes do not have medications in them and are only lubricating and tear-replacing solutions.
+Eye drops have less of a risk of side effects than do oral medicines, and such risk can be minimized by occluding the lacrimal punctum, (i.e. pressing on the inner corner of the eye) for a short while after instilling drops. Eye drops are also used for stopping itching and redness of the eyes.</p>
+                        </div>
+                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/img2.jpg" alt="buffet">
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content align-items-center">
+                <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                    <h3>Sunglasses</h3>
+                </div>
+                <div class="col col-sm order-sm-first col-md">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/img4.jpg" alt="alberto">
+                        <div class="media-body">
+                            <h2 class="mt-0">Branded Sunglasses</h2>
+                            <h4>Available in different styles for different age people</h4>
+                            <p class="d-none d-sm-block" style="text-align:justify">No matter what the season might be, one doesn’t really need a reason to flaunt a pair of stylish sunglasses. Available in an assorted range and variety of styles, patterns and colours, sunglasses have established a wide market for themselves and are here to stay for a long time. Buy sunglasses from Dristi Chasma Ghar and choose best sunglass that sute you. 
+                            Available in different shapes, sizes, colours and frames, the price range of sunglasses at Dristi Chasma Ghar is from Rs. 250 to Rs. 5,000. Dristi assures you the best sunglasses online shopping experience. </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <header class="jumbotron">
-        <div class="container">
-            <div class="row row-header">
-                <div class="col-12 col-sm-6">
-                    <h1>Ristorante con Fusion</h1>
-                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
-                </div>
-                <div class="col-12 col-sm align-self-center">
-                    <img src="img/logo.png" class="img-fluid">
-                </div>
-                <div class="col-12 col-sm align-self-center">
-                    <a type="button" class="btn btn-warning btn-sm btn-block" id="reserveButton">Reserve Table</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="row row-content">
-            <div class="col">
-                <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img class="d-block img-fluid"
-                                src="img/uthappizza.png" alt="Uthappizza">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-primary">$4.99</span></h2>
-                                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
-                                    Italian pizza, topped with Cerignola olives, ripe vine
-                                    cherry tomatoes, Vidalia onion, Guntur chillies and
-                                    Buffalo Paneer.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid"
-                                src="img/buffet.png" alt="Grand Buffet">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h2>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
-                                <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of
-                                    five different salads, six enticing appetizers, six main entrees and five choicest desserts.
-                                    Free flowing bubbly and soft drinks. All for just $19.99 per person.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid"
-                                src="img/alberto.png" alt="Alberto Somayya">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h2>Alberto Somayya</h2>
-                                <h4>Executive Chef</h4>
-                                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide
-                                    International experience having worked closely with
-                                    whos-who in the culinary world, he specializes in
-                                    creating mouthwatering Indo-Italian fusion experiences.
-                                </p>
-                            </div>
-                        </div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#mycarousel" data-slide-to="1"></li>
-                            <li data-target="#mycarousel" data-slide-to="2"></li>
-                        </ol>
-                        <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                         </a>
-                        <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-                        <button class="btn btn-danger btn-sm" id="carousel-button">
-                            <span id="carousel-button-icon" class="fa fa-pause"></span>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="row row-content align-items-center">
-            <div class="col-sm-4 col-md-3 order-2">   <!-- Replaced flex-first and flex-last with order-1 and order-2 in beta 2" -->
-                <h3>Our Lipsmacking Culinary Creations</h3>
-            </div>
-            <div class="col-sm col-md order-1">
-               <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center"
-                         src="img/uthappizza.png" alt="Uthappizza">
-                    <div class="media-body">
-                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-primary">$4.99</span></h2>
-                        <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
-                          Italian pizza, topped with Cerignola olives, ripe vine
-                          cherry tomatoes, Vidalia onion, Guntur chillies and
-                          Buffalo Paneer.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row row-content align-items-center">
-            <div class="col-sm-4 col-md-3">
-                <h3>This Month's Promotions</h3>
-            </div>
-            <div class="col-sm col-md">
-                <div class="media">
-                    <div class="media-body">
-                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
-                        <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of
-                             five different salads, six enticing appetizers, six main entrees and five choicest desserts.
-                             Free flowing bubbly and soft drinks. All for just $19.99 per person.
-                         </p>
-                    </div>
-                    <img class="d-flex mr-3 img-thumbnail align-self-center"
-                    src="img/buffet.png" alt="Grand Buffet">
-                </div>
-            </div>
-        </div>
-
-        <div class="row row-content align-items-center">
-            <div class="col-sm-4 col-md-3 order-2">
-                <h3>Meet our Culinary Specialists</h3>
-            </div>
-            <div class="col-sm col-md order-1">
-                <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center"
-                         src="img/alberto.png" alt="Alberto Somayya">
-                    <div class="media-body">
-                        <h2 class="mt-0">Alberto Somayya</h2>
-                        <h4>Executive Chef</h4>
-                        <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide
-                         International experience having worked closely with
-                         whos-who in the culinary world, he specializes in
-                          creating mouthwatering Indo-Italian fusion experiences.
-                         </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>    
-
     <footer class="footer">
         <div class="container">
-            <div class="row">             
-                <div class="col-5 offset-1 col-sm-2">
+            <div class="row">
+                <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><a href="./aboutus.html">About</a></li>
+                        <li><a href="aboutus.html">About</a></li>
                         <li><a href="#">Menu</a></li>
-                        <li><a href="./contactus.html">Contact</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-5"> 
+                <div class="col-7 col-sm-5">
                     <h5>Our Address</h5>
                     <address>
-		              121, Clear Water Bay Road<br>
-		              Clear Water Bay, Kowloon<br>
-		              HONG KONG<br>
-                      <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
-                      <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
-                      <i class="fa fa-envelope fa-lg"></i>: 
-                      <a href="mailto:confusion@food.net">confusion@food.net</a>
-		           </address>
+                        Chauraha, Main Road, Dhagadhi<br>
+                        Kailali, State No.7<br>
+                        NEPAL<br>
+                        <i class="fa fa-phone fa-lg"></i> +9779848558156<br>
+                        <i class="fa fa-fax fa-lg"></i> +9779848427256<br>
+                        <i class="fa fa-envelope fa-lg"></i> <a href="mailto:dristi2060.np@gmail.com">dristi2060.np@gmail.com</a>
+                    </address>
                 </div>
-                <div class="col col-sm-4 align-self-center">
-                    <div style="text-align:center">
-                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
-                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
-                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                        <a  class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
                     </div>
                 </div>
-           </div>
-           <div class="row justify-content-center">             
+            </div>
+            <div class="row justify-content-center">
                 <div class="col-auto">
-                    <p>© Copyright 2015 Ristorante Con Fusion</p>
+                    <p>© Copyright 2018 New Dristi Chasma Ghar</p>
                 </div>
-           </div>
+            </div>
         </div>
     </footer>
-
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <!-- Bootsrap beta 4 replaced Tether with Popper -->
-    <!-- build:js js/main.js -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper-js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <!-- endbuild -->
-</body>
-
+    <!--  PLay/Pause Toggle in Single Button-->
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('#mycarousel').carousel({ interval:2000});
+    $('#carouselButton').click(function(){
+    if($('#carouselButton').children('span').hasClass('fa-pause'))
+    {
+    $('#mycarousel').carousel('pause');
+    $('#carouselButton').children('span').removeClass('fa-pause');
+    $('#carouselButton').children('span').addClass('fa-play');
+    }
+    else if($('#carouselButton').children('span').hasClass('fa-play'))
+    {
+    $('#mycarousel').carousel('cycle');
+    $('#carouselButton').children('span').removeClass('fa-play');
+    $('#carouselButton').children('span').addClass('fa-pause');
+    }
+    });
+    });
+    </script>
+    <!--***************-->
+    <script type="text/javascript">
+    $("#reserve").click(function() {
+    $("#RVModal").modal('show');
+    });
+    $("#login").click(function() {
+    $("#loginModal").modal('show');
+    });
+    $("#signup").click(function() {
+    $("#SignupModal").modal('show');
+    });
+    </script>
+    <!-- *********************** -->
+<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"><img src="000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div><script>function getCookie(e){for(var t=e+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(t))return i.substring(t.length,i.length)}return""}getCookie("hostinger")&&(document.cookie="hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;",location.reload());var notification=document.getElementsByClassName("notice notice-success is-dismissible"),hostingerLogo=document.getElementsByClassName("hlogo"),mainContent=document.getElementsByClassName("notice_content")[0],newList=["Powerful and Easy-To-Use Control Panel.","1-Click Auto Installer and 24/7 Live Support.","Free Domain, Email and SSL Bundle.","5x faster WordPress performance","Weekly Backups and Fast Response Time."];if(0<notification.length&&null!=mainContent){var googleFont=document.createElement("link");googleFontHref=document.createAttribute("href"),googleFontRel=document.createAttribute("rel"),googleFontHref.value="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600",googleFontRel.value="stylesheet",googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);var css="@media only screen and (max-width: 768px) {.web-hosting-90-off-image-wrapper {position: absolute;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} .web-hosting-90-off-image-wrapper {padding: 0 5%}} .content-wrapper {z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{border: 0; border-radius: 3px; background-color: #ff123a !important; padding: 15px 55px !important; margin-left: 30px; font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",style=document.createElement("style"),sheet=window.document.styleSheets[0];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(document.createTextNode(css)),document.getElementsByTagName("head")[0].appendChild(style),document.getElementsByTagName("head")[0].appendChild(googleFont);var button=document.getElementsByClassName("upgrade_button_red")[0],link=button.parentElement;link.setAttribute("href","https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&utm_medium=panel&utm_campaign=000-wp"),link.innerHTML='<button class="upgrade_button_red_sale">TRANSFER NOW</button>',(notification=notification[0]).setAttribute("style","padding-bottom: 10px; padding-top: 5px; background-image: url(000webhost/promotions/springsale/mountains-neon-background.jpg); background-color: #000000; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-color: #ff123a; border-width: 8px;"),notification.className="notice notice-error is-dismissible",(hostingerLogo=hostingerLogo[0]).setAttribute("src","https://cdn.000webhost.com/000webhost/promotions/springsale/logo-hostinger-white.svg"),hostingerLogo.setAttribute("style","float: none !important; height: auto; max-width: 100%; margin: 40px 20px 10px 30px;");var h1Tag=notification.getElementsByTagName("H1")[0];h1Tag.remove();var paragraph=notification.getElementsByTagName("p")[0];paragraph.innerHTML="Migrate your WordPress to Hostinger and enjoy the best features on the market! The time is now!",paragraph.setAttribute("style",'max-width: 600px; margin-left: 30px; font-family: "Open Sans", sans-serif; font-size: 16px; font-weight: 600;');var list=notification.getElementsByTagName("UL")[0];list.setAttribute("style","max-width: 675px;");for(var listElements=list.getElementsByTagName("LI"),i=0;i<newList.length;i++)listElements[i].setAttribute("style","color:#ffffff; list-style-type: disc; margin-left: 30px; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.5;"),listElements[i].innerHTML=newList[i];listElements[listElements.length-1].remove();var org_html=mainContent.innerHTML,new_html='<div class="content-wrapper">'+mainContent.innerHTML+'</div><div class="web-hosting-90-off-image-wrapper"><img class="web-hosting-90-off-image" src="https://cdn.000webhost.com/000webhost/promotions/springsale/web-hosting-90-off.png"></div>';mainContent.innerHTML=new_html;var saleImage=mainContent.getElementsByClassName("web-hosting-90-off-image")[0];!function(){var t=document.querySelectorAll("body.wp-admin")[0];function e(){var e=document.createElement("iframe");e.id="hgr-promo-widget",e.setAttribute("src","https://www.hostinger.com/widgets/bottom-banner-sale/000_wp_admin"),e.setAttribute("allowfullscreen",!0),e.setAttribute("frameborder",0),e.style.cssText="z-index: 2147483000 !important;position: fixed !important;bottom: 0; width: 100%;!important; left: 0!important;",e.style.opacity=0,e.onload=function(){iFrameResize({},"#hgr-promo-widget"),e.style.opacity=1},t.insertAdjacentElement("afterend",e)}if(window.iFrameResize)e();else{var n=document.createElement("script");n.type="text/javascript",t.insertAdjacentElement("afterend",n),n.onload=e,n.src="https://unpkg.com/iframe-resizer@3.6.3/js/iframeResizer.min.js"}}()}</script><center><font size="2">This is the free demo result. For a full version of this website, please go to  <a href="https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/">https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/</a></font></center></body>
 </html>
